@@ -7,14 +7,14 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="core" />
-        <module name="CodePractice" />
         <module name="spring-boot-mongodb" />
         <module name="SpringEchoService" />
+        <module name="CodePractice" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="CertificationPractice" target="1.7" />
+      <module name="core" target="11" />
       <module name="easy-notes" target="11" />
       <module name="elevator" target="1.8" />
       <module name="elevator-design" target="7" />

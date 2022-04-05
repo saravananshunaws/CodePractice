@@ -21,7 +21,7 @@ public class ConnectedComponentsUndirectedGraph {
 
         List<Integer>[] adjList = new ArrayList[n];
         for (int i = 0; i < n; i++) {
-            adjList[i] = new ArrayList<Integer>();
+            adjList[i] = new ArrayList<>();
         }
 
         for (int i = 0; i < edges.length; i++) {

@@ -2,7 +2,6 @@ package org.example.mustdocoding.string;
 
 public class RemoveInvalidClosingBraces {
     private static String removeInvalidClosing(String s) {
-
         // Pass 1: Remove all invalid ")"
         StringBuilder sb = new StringBuilder();
         int openSeen = 0;
@@ -35,6 +34,6 @@ public class RemoveInvalidClosingBraces {
     }
 
     public static void main(String[] args) {
-        System.out.println(removeInvalidClosing( "lee(t(c)o)de)"));
+        System.out.println(removeInvalidClosing( "lee(((t(c)o)de)"));
     }
 }

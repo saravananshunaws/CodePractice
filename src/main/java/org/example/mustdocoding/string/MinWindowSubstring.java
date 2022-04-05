@@ -18,10 +18,8 @@ public class MinWindowSubstring {
         if (t.length() > s.length()) {
             return "";
         }
-
-        Map<Character, Integer> map = new HashMap<>(); // To keep track of frequency of every character in s
-        Map<Character, Integer> counts = new HashMap<>(); // To keep track of frequency of every character in t
-
+        Map<Character, Integer> map = new HashMap<>();
+        Map<Character, Integer> counts = new HashMap<>();
         for (char c : t.toCharArray()) {
             counts.put(c, counts.getOrDefault(c, 0) + 1);
         }
@@ -45,7 +43,6 @@ public class MinWindowSubstring {
                 map.put(x, map.get(x) - 1);
             }
         }
-
         return answer;
     }
 

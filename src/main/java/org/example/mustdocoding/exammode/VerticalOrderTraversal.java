@@ -16,37 +16,32 @@ public class VerticalOrderTraversal {
         }
     }
 
-    public static void VerticalOrderTraversal(TreeNodeGeneric root) {
-        Queue<Pair> q = new LinkedList<>();
+    public static void verticalOrderTraversal(TreeNodeGeneric root) {
+        Map<Integer, List<Integer>> columnMap = new HashMap<>();
         int column = 0;
+        Queue<Pair> q = new LinkedList<>();
         q.add(new Pair(root, column));
-        Map<Integer, List<Integer>> map = new HashMap<>();
-        while (!q.isEmpty()) {
-            Pair pair = q.poll();
-            if (!map.containsKey(pair.column)) {
-                map.put(pair.column, new ArrayList<>());
+        while(!q.isEmpty()){
+            Pair p = q.poll();
+            TreeNodeGeneric node = p.node;
+            int c = p.column;
+            if(!columnMap.containsKey(c)){
+                columnMap.put(c, new ArrayList<>());
             }
-            map.get(pair.column).add(pair.node.val);
-
-            if (pair.node.left != null) {
-                q.add(new Pair(pair.node.left, column - 1));
+            columnMap.get(c).add(node.val);
+            if(node.left != null) {
+                q.add(new Pair(node.left, c - 1));
             }
-
-            if (pair.node.right != null) {
-                q.add(new Pair(pair.node.right, column + 1));
+            if(node.right != null) {
+                q.add(new Pair(node.right, c + 1));
             }
         }
 
-        List<Integer> list = new ArrayList<>(map.keySet());
-        Collections.sort(list);
-        for (Integer i : list) {
-            System.out.println(map.get(i));
-        }
-
+        System.out.println(columnMap);
     }
 
     public static void main(String[] args) {
         TreeNodeGeneric root = TreeNodeGeneric.getTree();
-        VerticalOrderTraversal(root);
+        verticalOrderTraversal(root);
     }
 }

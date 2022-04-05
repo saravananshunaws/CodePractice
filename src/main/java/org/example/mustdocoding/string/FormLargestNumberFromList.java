@@ -3,7 +3,7 @@ package org.example.mustdocoding.string;
 import java.util.Arrays;
 import java.util.Comparator;
 
-public class LargestNumber {
+public class FormLargestNumberFromList {
     public static void main(String[] args) {
         int[] nums = {3, 30, 34, 5, 9};
 
